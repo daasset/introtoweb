@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li::before {
+            content: '\21E8';
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        li:hover::before {
+            color: blue;
+        }
+
+        .usd::after {
+            content: '$';
+        }
+    </style>
+</head>
+
+<body>
+    <p>Prices for courses</p>
+    <ul>
+        <li>Java course costs <span class="usd">95</span></li>
+        <li>Python course costs <span class="usd">85</span> if you pay ahead</li>
+        <li>CSS course costs <span class="usd">100</span> per month</li>
+    </ul>
+</body>
+
+</html>
