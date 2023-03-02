@@ -35,9 +35,28 @@ COMMON THINGS
     margin-bottom: 20px;
 }
 
+.white-box-no-padding {
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
 .circle-profile-pic img {
-    width: 50px;
+    width: 55px;
     border-radius: 50%;
+}
+
+.big-circle-profile-pic img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+.small-column {
+    width: 30%;
+}
+
+.big-column {
+    width: 70%;
 }
 
 
@@ -114,13 +133,7 @@ BODY
     display: flex;
 }
 
-
 /* MAIN -> LEFT-COLUMN */
-
-.main .left-column {
-    width: 30%;
-}
-
 .main .left-column .profile .profile_pic img {
     width: 100%;
 }
@@ -167,14 +180,11 @@ BODY
 }
 
 /* MAIN -> RIGHT-COLUMN */
-
 .main .right-column {
-    width: 70%;
     padding-left: 20px;
 }
 
 /* MAIN -> RIGHT-COLUMN -> INFO */
-
 .main .right-column .info .name-box {
     display: flex;
     padding-bottom: 15px;
@@ -239,7 +249,6 @@ BODY
 }
 
 /* MAIN -> RIGHT-COLUMN -> PHOTOS */
-
 .main .right-column .photos {
     padding-bottom: 15px;
     border-bottom: #E9E9E9 solid 1px;
@@ -295,4 +304,145 @@ BODY
     color: #303030;
     line-height: 150%;
     padding-bottom: 10px;
+}
+
+/* MAIN -> LEFT-COLUMN -> MESSAGES*/
+.main .left-column .messages .top {
+    display: flex;
+    background-color: #FAFAFF;
+    padding: 10px 15px;
+    border-bottom: #DDDDDD solid 1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.main .left-column .messages .top .friends-info {
+    line-height: 30px;
+    color: black;
+    padding: 0 10px 0 5px;
+}
+
+.main .left-column .messages .top .friends-info span {
+    margin-left: 10px;
+    color: #8282A2;
+}
+
+.main .left-column .messages .top .button-blue {
+    margin-left: auto;
+}
+
+.main .left-column .messages .top .button-blue button {
+    padding: 7px 15px;
+    background-color: #4F76A1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.main .left-column .messages .search {
+    border-bottom: #DDDDDD solid 1px;
+}
+
+.main .left-column .messages .search input {
+    width: 95%;
+    border: none;
+    padding: 15px;
+    font-size: 15px;
+    color: black;
+}
+
+.main .left-column .messages .search input:focus-visible {
+    outline: none;
+}
+
+.main .left-column .messages .partners-list .partner {
+    padding: 10px;
+    border-bottom: #DDDDDD solid 1px;
+    display: flex;
+}
+
+.main .left-column .messages .partners-list .last {
+    border-bottom: none;    
+}
+
+.main .left-column .messages .partners-list .partner .partner-info {
+    padding: 5px 15px;
+}
+
+.main .left-column .messages .partners-list .partner .partner-info .partner-name {
+    font-weight: bold;
+}
+
+.main .left-column .messages .partners-list .partner .partner-info .partner-university {
+    padding-top: 7  px;
+    color: grey;
+}
+
+.main .left-column .messages .partners-list .partner .partner-info .white-message-link {
+    padding-top: 7px;
+}
+
+.main .left-column .messages .partners-list .partner .partner-info .white-message-link a {
+    text-decoration: none;
+}
+
+.main .left-column .messages .partners-list .partner .partner-info .white-message-link a:hover {
+    text-decoration: underline;
+}
+
+
+.main .left-column .messages .partners-list .partner .dots {
+    font-size: 24px;
+    margin: -7px 0 0 auto;
+    padding-right: 10px;
+}
+
+
+/* MAIN -> LEFT-COLUMN -> FRIENDS-MENU */
+.main .right-column .friends-menu {
+    padding: 10px 0;
+}
+
+.main .right-column .friends-menu .item {
+    padding: 10px 15px;
+}
+
+.main .right-column .friends-menu .selected {
+    color: black;
+    font-weight: bold;
+    background-color: #EDEDFC;
+}
+
+/* MAIN -> LEFT-COLUMN -> POSSIBLE-FRIENDS-LIST */
+.main .right-column .possible-friends-list .title {
+    color: black;
+    padding: 5px 0 10px;
+}
+
+.main .right-column .possible-friends-list .possible-friend {
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.main .right-column .possible-friends-list .possible-friend .possible-friend-info {
+    padding-left: 12px;
+    margin-top: -3px;
+}
+
+.main .right-column .possible-friends-list .possible-friend .possible-friend-info .name {
+    padding-bottom: 4px;
+}
+
+.main .right-column .possible-friends-list .possible-friend .possible-friend-info .common-friends-count {
+    color: grey;
+    padding-bottom: 4px;
+}
+
+.main .right-column .possible-friends-list .possible-friend .possible-friend-info .add-friend-link a {
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.main .right-column .possible-friends-list .possible-friend .possible-friend-info .add-friend-link a:hover {
+    text-decoration: underline;
 }
