@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        const usdKzt = 380;
+        var kztAmount = parseInt(prompt("Insert amount in KZT"));
+
+        if (kztAmount % usdKzt === 0) {
+            alert(`ONLY ${parseInt(kztAmount / usdKzt)} USD`);
+        } else {
+            alert(`${parseInt(kztAmount / usdKzt)} USD and ${((kztAmount % usdKzt) / usdKzt).toFixed(2) * 100} cents`);
+        }
+    </script>
+</body>
+</html>

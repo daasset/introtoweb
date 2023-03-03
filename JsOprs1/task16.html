@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        var timeInMinutes = parseInt(prompt("Insert time in minutes"));
+        var hours = Math.floor(timeInMinutes / 60);
+        var minutes = timeInMinutes % 60;
+
+        if (hours === 0) {
+            alert(`ONLY ${minutes} MINUTES`);
+        } else if (minutes === 0) {
+            alert(`ONLY ${hours} HOURS`);
+        } else {
+            alert(`${hours} HOURS and ${minutes} MINUTES`);
+        }
+    </script>
+</body>
+</html>

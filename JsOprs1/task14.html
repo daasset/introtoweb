@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        var nums = prompt("Введите три числа разделенных пробелом").split(' ');
+        var a = parseInt(nums[0]);
+        var b = parseInt(nums[1]);
+        var c = parseInt(nums[2]);
+
+        if (a + b > c && a + c > b && b + c > a) {
+            alert("YES");
+        } else {
+            alert("NO");
+        }
+    </script>
+</body>
+</html>

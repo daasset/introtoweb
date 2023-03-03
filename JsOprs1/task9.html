@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        const usd = 380;
+        const eur = 430;
+        const gbp = 480;
+
+        var nums = prompt("INSERT YOUR AMOUNT IN KZT:\n1- CONVERT TO USD\n2- CONVERT TO EUR\n3- CONVERT TO GBP").split(' ');
+        var amount = parseInt(nums[0]);
+        var index = parseInt(nums[1]);
+        
+        if (index === 1) {
+            alert(`${amount} KZT = ${(amount / usd).toFixed(2)} USD`);
+        } else if (index === 2) {
+            alert(`${amount} KZT = ${(amount / eur).toFixed(2)} EUR`);
+        } else if (index === 3) {
+            alert(`${amount} KZT = ${(amount / gbp).toFixed(2)} GBP`);
+        } else {
+            alert("Wrong index entered");
+        }
+        
+    </script>
+</body>
+</html>

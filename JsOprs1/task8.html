@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        const price = 120;
+        const treshold = 4000;
+        var numOfWiskas = parseInt(prompt("Enter a number"));
+
+        var sum = price * numOfWiskas;
+        if (sum < treshold) {
+            alert(sum);
+        } else {
+            alert(Math.floor(sum * 0.9));
+        }
+        
+    </script>
+</body>
+</html>
