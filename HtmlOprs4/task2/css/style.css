@@ -18,14 +18,15 @@ COMMON THINGS
     display: flex;
     max-width: 1150px;
     margin: auto;
+    padding: 0 10px
 }
 
 .inner-space .left-side {
-    width: 15%;
+    width: 170px;
 }
 
 .inner-space .right-side {
-    width: 85%;
+    width: calc(100% - 170px);
 }
 
 .white-box {
@@ -52,11 +53,11 @@ COMMON THINGS
 }
 
 .small-column {
-    width: 30%;
+    width: 285px;
 }
 
 .big-column {
-    width: 70%;
+    width: calc(100% - 285px);
 }
 
 
