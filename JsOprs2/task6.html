@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const books = [
+            {"name": "Harry Potter and the Philosopher's Stone", "author":"Joanne Rowling", "isbn": "1233123", "price": 40},
+            {"name": "Harry Potter and the Chamber of Secrets", "author":"Joanne Rowling", "isbn": "3233123", "price": 45},
+            {"name": "Harry Potter and the Prisoner of Azkaban", "author":"Joanne Rowling", "isbn": "4233123", "price": 50},
+            {"name": "Harry Potter and the Goblet of Fire", "author":"Joanne Rowling", "isbn": "5233123", "price": 55},
+            {"name": "Harry Potter and the Orden of the Phoenix", "author":"Joanne Rowling", "isbn": "6233123", "price": 60},
+            {"name": "Harry Potter and the Half-Blood Prince", "author":"Joanne Rowling", "isbn": "7233123", "price": 65},
+            {"name": "Harry Potter and the Deathly Hollows", "author":"Joanne Rowling", "isbn": "8233123", "price": 70},
+
+            {"name": "The Lord of the Ring: The Fellowship of the Ring", "author":"R. R. Tolkien", "isbn": "001233123", "price": 100},
+            {"name": "The Lord of the Ring: The Two Towers", "author":"R. R. Tolkien", "isbn": "011233123", "price": 101},
+            {"name": "The Lord of the Ring: The Return of the King", "author":"R. R. Tolkien", "isbn": "021233123", "price": 102},
+        ];
+
+        let bookName = prompt("Enter the name of the book you are searching for");
+
+        let foundBooks = [];
+
+        books.forEach(book => {
+            if (book.name.toLowerCase().includes(bookName.toLowerCase())) {
+                foundBooks.push(book);
+            }
+        });
+
+        if (foundBooks.length == 0) {
+            alert("No books with such a name were found");
+        } else {
+            res = "";
+            foundBooks.forEach(book => {
+                res += `${book.name} - ${book.author} - ${book.isbn} - ${book.price}$\n`;
+            });
+            alert(res);
+        }
+    </script>
+</body>
+</html>
