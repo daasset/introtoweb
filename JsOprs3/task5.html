@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let cars = [
+            { "name": "Toyota", "price": 12000000, "year": 2015, "volume": 2.2 },
+            { "name": "Mercedes", "price": 70000000, "year": 2018, "volume": 3.8 },
+            { "name": "Toyota", "price": 7000000, "year": 2013, "volume": 2.0 },
+            { "name": "BMW", "price": 11000000, "year": 2011, "volume": 3.0 },
+            { "name": "Lexus", "price": 60000000, "year": 2017, "volume": 5.7 }
+        ];
+
+        let choice;
+
+        do {
+            choice = showMenu();
+            if (choice != 5) {
+                if (askCarInfo()) {
+                    break;
+                }    
+            }
+        } while (choice != 5);
+
+        function showMenu() {
+            return prompt("INSERT [1] TO SEARCH BY NAME\nINSERT [2] TO SEARCH BY YEAR\nINSERT [3] TO SEARCH BY ENGINE VOLUME\nINSERT [4] TO SEARCH BY PRICE\nINSERT [5] TO EXIT");
+        }
+
+        function askCarInfo() {
+            if (choice == 1) {
+                let name = prompt("INSERT NAME OF CAR:");
+                if (name == 0) { return true; }
+
+                let res = ""
+                cars.forEach(car => {
+                    if (car.name.toLowerCase() == name.toLowerCase()) {
+                        res += `${car.name} - ${car.year} - ${car.volume} liters - ${car.price} KZT\n`;
+                    }
+                });
+
+                if (res != "") {
+                    alert(res);
+                } else {
+                    alert("There are no cars with such a name");
+                }
+            } else if (choice == 2) {
+                let yearFrom = prompt("INSERT YEAR START FROM:");
+                if (yearFrom == 0) { return true; }
+                let yearTo = prompt("INSERT YEAR ENDS TO:");
+                if (yearTo == 0) { return true; }
+
+
+                let res = ""
+                cars.forEach(car => {
+                    if (car.year >= yearFrom && car.year <= yearTo) {
+                        res += `${car.name} - ${car.year} - ${car.volume} liters - ${car.price} KZT\n`;
+                    }
+                });
+
+                if (res != "") {
+                    alert(res);
+                } else {
+                    alert("There are no such cars");
+                }
+            } else if (choice == 3) {
+                let volumeFrom = prompt("INSERT ENGINE VOLUME START FROM:");
+                if (volumeFrom == 0) { return true; }
+                let volumeTo = prompt("INSERT ENGINE VOLUME ENDS TO:");
+                if (volumeTo == 0) { return true; }
+                let res = ""
+                cars.forEach(car => {
+                    if (car.volume >= volumeFrom && car.volume <= volumeTo) {
+                        res += `${car.name} - ${car.year} - ${car.volume} liters - ${car.price} KZT\n`;
+                    }
+                });
+
+                if (res != "") {
+                    alert(res);
+                } else {
+                    alert("There are no such cars");
+                }
+            } else if (choice == 4) {
+                let priceFrom = prompt("INSERT PRICE START FROM:");
+                if (priceFrom == 0) { return true; }
+                let priceTo = prompt("INSERT PRICE ENDS TO:");
+                if (priceTo == 0) { return true; }
+                let res = ""
+                cars.forEach(car => {
+                    if (car.price >= priceFrom && car.price <= priceTo) {
+                        res += `${car.name} - ${car.year} - ${car.volume} liters - ${car.price} KZT\n`;
+                    }
+                });
+
+                if (res != "") {
+                    alert(res);
+                } else {
+                    alert("There are no such cars");
+                }
+            }
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>

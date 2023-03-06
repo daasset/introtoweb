@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let students = [];
+
+        let choice;
+
+        do {
+            choice = showMenu();
+            if (choice == 1) {
+                askStudentInfo();
+            } else if (choice == 2) {
+                listStudents();
+            } else if (choice == 0) {
+                exitProgram();
+            } else {
+                alert("Wrong input selected!");
+            }
+        } while (choice != 0);
+
+        function showMenu() {
+            return prompt("PRESS 1 TO ADD STUDENT\nRESS 2 TO LIST STUDENT\nPRESS 0 TO EXIT");
+        }
+
+        function askStudentInfo() {
+            let student = {};
+
+            student.name = prompt("INSERT NAME:");
+            student.surname = prompt("INSERT SURNAME:");
+            student.gpa = prompt("INSERT GPA:");
+
+            students.push(student);
+        }
+
+        function listStudents() {
+            let res = "";
+            students.forEach(student => {
+                res += `${student.name} - ${student.surname} - GPA: ${student.gpa}\n`;
+            });
+            alert(res);
+        }
+
+        function exitProgram() {
+            alert("Bye bye!");
+        }
+    </script>
+</body>
+
+</html>
