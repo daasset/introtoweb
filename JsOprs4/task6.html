@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style3.css">
+</head>
+
+<body>
+    <div class="form-wrapper">
+        <form id="registrationform">
+            <div class="field-wrapper">
+                <p>Email:</p>
+                <div class="input-wrapper">
+                    <input type="text" name="email">
+                </div>
+                <div id="emailerror" class="error"></div>
+            </div>
+            <div class="field-wrapper">
+                <p>Password:</p>
+                <div class="input-wrapper">
+                    <input type="text" name="password">
+                </div>
+                <div id="passworderror" class="error"></div>
+            </div>
+            <div class="field-wrapper">
+                <p>Retype Password:</p>
+                <div class="input-wrapper">
+                    <input type="text" name="password2">
+                </div>
+                <div id="password2error" class="error"></div>
+            </div>
+            <div class="field-wrapper">
+                <button class="button" name="register" onclick="return doRegister()">REGISTER</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let users = [
+            { email: "test@test.com", password: "12345678" },
+            { email: "asdf@asdf.com", password: "qwer1234" }
+        ];
+
+        function doRegister() {
+            let emailErrorText = "";
+            let email = registrationform.elements.email.value;
+
+            if (!email.includes("@")) {
+                emailErrorText = "Email must contain @";
+            } else {
+                users.forEach(u => {
+                    if (u.email == email) {
+                        emailErrorText = "Current email is already in use";
+                    }
+                });
+            }
+
+            let passwordErrorText = "";
+            let passsword = registrationform.elements.password.value;
+            if (passsword.length < 6) {
+                passwordErrorText = "Password length must be at least 6 characters long";
+            }
+
+            let password2ErrorText = "";
+            let passsword2 = registrationform.elements.password2.value;
+            if (passsword2 != passsword) {
+                password2ErrorText = "Passwords are not the same";
+            }
+
+            if (emailErrorText != "") {
+                emailerror.innerText = emailErrorText;
+            } else {
+                emailerror.innerText = "";
+            }
+
+            if (passwordErrorText != "") {
+                passworderror.innerText = passwordErrorText;
+            } else {
+                passworderror.innerText = "";
+            }
+
+            if (password2ErrorText != "") {
+                password2error.innerText = password2ErrorText;
+            } else {
+                password2error.innerText = ""
+            }
+
+            if (emailErrorText == "" && passwordErrorText == "" && password2ErrorText == "") {
+                users.push({ email: email, password: passsword });
+                alert("You've successfully registerd!");
+
+                registrationform.elements.email.value = "";
+                registrationform.elements.password.value = "";
+                registrationform.elements.password2.value = "";
+            }
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>

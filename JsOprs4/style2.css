@@ -1,0 +1,45 @@
+* {
+    padding: 0px; margin: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pic-wrapper {
+    text-align: center;
+    padding: 20px;
+}
+
+.pic {
+    height: 500px;
+    border-radius: 5px;
+}
+
+.button-wrapper {
+    text-align: center;
+}
+
+.button {
+    background-color: #212529;
+    color: white;
+    border: none;
+    padding: 7px;
+    margin: 0 3px;
+}
+
+.minipics-list {
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.minipic {
+    height: 80px;
+}

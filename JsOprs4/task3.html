@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="paymentform">
+        <table class="table">
+            <tr>
+                <td>CARD:</td>
+                <td><input type="text" class="short" name="cardpart1"></td>
+                <td><input type="text" class="short" name="cardpart2"></td>
+                <td><input type="text" class="short" name="cardpart3"></td>
+                <td><input type="text" class="short" name="cardpart4"></td>
+            </tr>
+            <tr>
+                <td>NAME SURNAME:</td>
+                <td colspan="4"><input type="text" class="long" name="cardholder"></td>
+            </tr>
+            <tr>
+                <td>CVV:</td>
+                <td colspan="4"><input type="password" class="short" name="cvv"></td>
+            </tr>
+            <tr>
+                <td><button class="button" onclick="return pay();">COMPLETE</button></td>
+                <td colspan="4"></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        let cardsList = [
+            {fullname: "Asset Daliyev", number: "1234123412341234", cvv: "111"},
+            {fullname: "Abs Sbf", number: "1111222233334444", cvv: "999"}
+        ];
+
+        function cardPartEntered1() {
+            cardPartEntered(1);
+        }
+        function cardPartEntered2() {
+            cardPartEntered(2);
+        }
+        function cardPartEntered3() {
+            cardPartEntered(3);
+        }
+        function cardPartEntered4() {
+            cardPartEntered(4);
+        }
+        function cardPartEntered(partNum) {
+            if (event.target.value.length < 4) {
+                return;
+            }
+
+            switch (partNum) {
+                case 1:
+                    paymentform.elements.cardpart2.focus();
+                    paymentform.elements.cardpart2.value = event.key;
+                    event.preventDefault();
+                    break;
+                case 2:
+                    paymentform.elements.cardpart3.focus();
+                    paymentform.elements.cardpart3.value = event.key;
+                    event.preventDefault();
+                    break;
+                case 3:
+                    paymentform.elements.cardpart4.focus();
+                    paymentform.elements.cardpart4.value = event.key;
+                    event.preventDefault();
+                    break;
+                case 4:
+                    paymentform.elements.cardholder.focus();
+                    event.preventDefault();
+                    break;
+
+            }
+
+        }
+
+        function ccvEnetered() {
+            if (event.target.value.length >= 3) {
+                event.preventDefault();
+            }
+        }
+
+        function pay() {
+            let cardNumber = paymentform.elements.cardpart1.value + paymentform.elements.cardpart2.value 
+                + paymentform.elements.cardpart3.value + paymentform.elements.cardpart4.value;
+            let cvv = paymentform.elements.cvv.value;
+            for (const card of cardsList) {
+                if (card.number == cardNumber && card.cvv == cvv) {
+                    alert("Transaction completed");
+                    return;
+                }
+            }
+            alert("Invalid Data");
+            return false;
+        }
+
+        paymentform.elements.cardpart1.addEventListener('keypress', cardPartEntered1);
+        paymentform.elements.cardpart2.addEventListener('keypress', cardPartEntered2);
+        paymentform.elements.cardpart3.addEventListener('keypress', cardPartEntered3);
+        paymentform.elements.cardpart4.addEventListener('keypress', cardPartEntered4);
+
+        paymentform.elements.cvv.addEventListener('keypress', ccvEnetered);
+
+        paymentform.elements.cvv.addEventListener('keypress', ccvEnetered);
+    </script>
+</body>
+
+</html>

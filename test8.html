@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>DOM events</title>
+      <style>
+         .invalid { border-color: red; }
+         div { color: red }
+      </style>
+   </head>
+   <body>
+      Your email: 
+      <input type="email" id="emailInput">
+      <div id="error"></div>
+      <script>
+         
+         emailInput.onchange = callOnChange; // на событие onblur зовем callOnBlur
+         
+         function callOnChange() {
+          if (this.classList.contains('invalid')) { // если у элемента есть класс invalid
+            this.classList.remove('invalid'); // то убираем данный класс
+            error.innerHTML = ""; // убираем сообщение о правильном вводе
+          }
+         }
+         
+      </script>
+   </body>
+</html>

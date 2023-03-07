@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>DOM example</title>
+   </head>
+   <body>
+      <ul id="list">
+         <li>1</li>
+         <li>2</li>
+         <li>3</li>
+      </ul>
+      <script>
+         let par1 = document.createElement('p');
+         par1.innerHTML = 'Paragraph BEFORE list';
+         list.before(par1); // вставить par1 до <ul>
+         
+         let par2 = document.createElement('p');
+         par2.innerHTML = 'Paragraph AFTER list';
+         list.after(par2); // вставить par2 после <ul>
+
+         let liFirst = document.createElement('li');
+         liFirst.innerHTML = '0';
+         list.prepend(liFirst); // вставить liFirst в начало <ul>
+         
+         let liLast = document.createElement('li');
+         liLast.innerHTML = '4';         
+         list.append(liLast); // вставить liLast в конец <ul>
+      </script>
+   </body>
+</html>

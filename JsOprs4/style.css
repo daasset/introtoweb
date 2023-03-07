@@ -1,0 +1,46 @@
+* {
+    padding: 0px; margin: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+.table tr td {
+    padding: 10px;
+}
+
+input {
+    border: 1.4px solid black;
+    border-radius: 0px;
+    padding: 3px;
+}
+.button-wrapper {
+    text-align: right;
+}
+.button {
+    background-color: #2E74B5;
+    color: white;
+    padding: 0px 20px;
+}
+
+.border-red {
+    border: 1px solid red;
+}
+
+.blue {
+    color: #0070C0;
+}
+
+.short {
+    width: 40px;
+}
+
+.long {
+    width: 100px;
+}

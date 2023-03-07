@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <div class="pic-wrapper">
+        <img id="pic" class="pic" src="img/1.jpg" alt="1">
+    </div>    
+    <div class="button-wrapper">
+        <button id="buttonback" class="button" onclick="changeImage(-1)">&lt; BACK</button>
+        <button id="buttonnext" class="button" onclick="changeImage(1)">NEXT &gt;</button>
+    </div>
+
+    <script>
+        let index = 0;
+        let folder = "img/";
+        let images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"];
+
+        function changeImage(step) {
+            console.log(step);
+            index = (index + step + images.length) % images.length;
+
+            pic.src = folder + images[index];    
+        }
+
+        
+    </script>
+</body>
+
+</html>
