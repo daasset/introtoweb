@@ -1,0 +1,68 @@
+* {
+    padding: 0px; margin: 0px;
+}
+
+html {
+    background-color: #F8F9FA;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-form {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 270px auto;
+    background-color: white;
+    border: 1.4px solid #DEE2E6;
+    border-radius: 10px;
+    padding: 35px;
+}
+
+.cell {
+    width: 25%;
+    margin: 0 10px;
+}
+
+.cell .title {
+    padding-bottom: 8px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.input-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-wrapper > input {
+    height: 25px;
+    border: 1.4px solid #DEE2E6;
+    padding: 4px 10px;
+    font-size: 14px;;
+}
+
+.input-wrapper > select {
+    height: 35.5px;
+    width: 75px;
+    border: 1.4px solid #DEE2E6;
+    padding: 4px 10px;
+    font-size: 14px;;
+}
+
+.input-wrapper .changable-input {
+    width: 55%;
+}
+
+.input-wrapper .readonly-input {
+    width: 85%;
+    background-color: #E9ECEF;
+}
+
+.input-wrapper .readonly-input:focus-visible {
+    outline:none;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form class="main-form">
+        <div class="cell">
+            <div class="title">Введите сумму:</div>
+            <div class="input-wrapper">
+                <input id="input-amount" type="text" class="changable-input" name="inputamount" value="0">
+                <select id="select-currency" class="select-input" name="convcur">
+                    <option>KZT</option>
+                    <option>USD</option>
+                    <option>EUR</option>
+                </select>
+            </div>
+        </div>
+        <div class="cell">
+            <div class="title bold">
+                KZT (tenge):
+            </div>
+            <div class="input-wrapper">
+                <input id="res-kzt" type="text" class="readonly-input" name="reskzt" readonly="readonly" value="-">
+            </div>
+        </div>
+        <div class="cell">
+            <div class="title bold">
+                USD (dollars):
+            </div>
+            <div class="input-wrapper">
+                <input id="res-usd" type="text" class="readonly-input" name="resusd" readonly="readonly" value="0.00">
+            </div>
+        </div>
+        <div class="cell">
+            <div class="title bold">
+                EUR (euro):
+            </div>
+            <div class="input-wrapper">
+                <input id="res-eur" type="text" class="readonly-input" name="reseur" readonly="readonly" value="0.00">
+            </div>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
