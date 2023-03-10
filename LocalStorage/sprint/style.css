@@ -75,6 +75,7 @@
 .main .center-box .field-wrapper .error {
     color: red;
     font-size: 14px;
+    padding: 3px 5px 0 8px;
 }
 .main .center-box .field-wrapper .blue-button {
     border: none;

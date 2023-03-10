@@ -5,16 +5,22 @@ let countryInput = document.getElementById("country");
 let birthdayInput = document.getElementById("birthday");
 
 function doRegister() {
+    let users = JSON.parse(localStorage.getItem("users"));
+    if (users == null) {
+        users = [];
+    }
+
     let email = emailInput.value;
     let emailError = "";
     if (!email.includes("@")) {
         emailError = "*Email must contain @";
     }
 
-    let user = localStorage.getItem(email);
-    if (user !== null) {
-        emailError = "*Email already registered";
-    }
+    users.forEach(u => {
+        if (u.email == email) {
+            emailError = "*Email already registered";
+        }
+    });
 
     let password = passwordInput.value;
     let passwordError = "";
@@ -59,15 +65,10 @@ function doRegister() {
         return false;
     }
 
-    let newUser = {
-        email: email,
-        password: password,
-        fullname: fullname,
-        country: country,
-        birthday: birthday
-    }
+    let newUser = { email: email, password: password, fullname: fullname, country: country, birthday: birthday };
+    users.push(newUser);
 
-    localStorage.setItem(email, JSON.stringify(newUser));
+    localStorage.setItem("users", JSON.stringify(users));
     localStorage.setItem("message", "You've successfully registered!\nNow log in into your new account.");
     return true;
 }

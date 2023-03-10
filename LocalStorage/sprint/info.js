@@ -6,9 +6,18 @@ if (messageText !== null) {
     localStorage.removeItem("message");
 }
 
+let users = JSON.parse(localStorage.getItem("users"));
+if (users == null) {
+    users = [];
+}
 
 let email = localStorage.getItem("loggedUser");
-let user = JSON.parse(localStorage.getItem(email));
+let user = null;
+users.forEach(u => {
+    if (u.email == email) {
+        user = u;
+    }
+});
 
 document.getElementById("fullname-header").innerText = user.fullname;
 

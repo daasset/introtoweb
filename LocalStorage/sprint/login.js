@@ -11,6 +11,11 @@ let emailInput = document.getElementById("email");
 let passwordInput = document.getElementById("password");
 
 function doLogin() {
+    let users = JSON.parse(localStorage.getItem("users"));
+    if (users == null) {
+        users = [];
+    }
+
     let email = emailInput.value;
     let emailError = "";
     if (email == "") {
@@ -23,14 +28,16 @@ function doLogin() {
         passwordError = "*Password cannot be empty";
     }
 
-    let userStr = localStorage.getItem(email);
-    if (userStr === null) {
-        emailError = "*Email is not registered";
-    } else {
-        let user = JSON.parse(userStr);
-        if (password != user.password) {
-            passwordError = "*Incorrect password enetered";
+    let curUser = null;
+    users.forEach(u => {
+        if (u.email == email) {
+            curUser = u;
         }
+    });
+    if (curUser == null) {
+        emailError = "*Email is not registered";
+    } else if (password != curUser.password) {
+        passwordError = "*Incorrect password enetered";
     }
 
     if (emailError + passwordError !=  "") {
