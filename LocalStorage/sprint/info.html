@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Personal Info</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">TWITTER</div>
+        <div class="links">
+            <a href="#">Tweets</a>
+            <a href="login.html" id="logout" onclick="return doLogout()">Logout</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="center-box">
+            <div class="" id="message"></div>
+            <h1>Welcome <span id="fullname-header"></span></h1>
+            <div class="field-wrapper">
+                <p class="label">EMAIL:</p>
+                <p class="info" id="email-info">asdfasdf</p>
+            </div>
+            <div class="field-wrapper">
+                <p class="label">FULL NAME:</p>
+                <p class="info" id="fullname-info">asdfasdf</p>
+            </div>
+            <div class="field-wrapper">
+                <p class="label">COUNTRY:</p>
+                <p class="info" id="country-info" >asdfasdf</p>
+            </div>
+            <div class="field-wrapper">
+                <p class="label">BIRTHDAY:</p>
+                <p class="info" id="birthday-info">asdfasdf</p>
+            </div>
+        </div>        
+   </div>
+
+   <script src="info.js"></script>
+</body>
+</html>

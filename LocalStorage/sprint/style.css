@@ -1,0 +1,92 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background-color: #2C8391;
+    margin: 0px 30px;
+    color: white;
+    padding: 0 15px;
+}
+.header .logo {
+    width: 40%;
+    font-weight: bold;
+    font-size: 20px;
+}
+.header .links {
+    width: 60%;
+    text-align: right;
+    font-weight: bold;
+}
+.header .links a {
+    text-decoration: none;
+    color: #9FC8CE;
+    margin-left: 15px;
+}
+.header .links a:hover {
+    text-decoration: underline;
+}
+
+/* MAIN */
+.main .center-box {
+    width: 380px;
+    margin: 30px auto;
+    /* background-color: #2C8391; */
+}
+.main .center-box .message {
+    background-color: #26AFBF;
+    color: white;
+    width: 350px;
+    padding: 15px;
+    margin: 10px;
+    line-height: 140%;
+    font-size: 18px;
+    text-align: center;
+
+}
+.main .center-box .field-wrapper {
+    padding: 10px;
+}
+.main .center-box .field-wrapper .label {
+    font-size: 15px;
+    padding-bottom: 15px;
+}
+.main .center-box .field-wrapper .info {
+    font-weight: bold;
+}
+.main .center-box .field-wrapper .input-wrapper input,
+.main .center-box .field-wrapper .input-wrapper select {
+    height: 30px;
+    width: 99%;
+    border: 1.5px solid #F0F2F4;
+    padding: 5px 10px;
+    font-size: 18px;
+}
+.main .center-box .field-wrapper .input-wrapper select {
+    width: 105%;
+    height: 45px;
+}
+.main .center-box .field-wrapper .error {
+    color: red;
+    font-size: 14px;
+}
+.main .center-box .field-wrapper .blue-button {
+    border: none;
+    background-color: #00008B;
+    color: white;
+    padding: 12px 15px;
+}
+.main .center-box .field-wrapper .blue-button:active {
+    background-color: #000053;
+}
+.main .center-box h1 {
+    font-size: 26px;
+    text-align: center;
+    padding-bottom: 40px;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Registration</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">TWITTER</div>
+        <div class="links">
+            <a href="#">Tweets</a>
+            <a href="login.html">Login</a>
+            <a href="#">Register</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="center-box">
+            <form class="input-form" action="login.html">
+                <div class="field-wrapper">
+                    <p class="label">EMAIL:</p>
+                    <div class="input-wrapper">
+                        <input type="text" id="email">
+                    </div>
+                    <div class="error" id="email-error"></div>
+                </div>
+                <div class="field-wrapper">
+                    <p class="label">PASSWORD:</p>
+                    <div class="input-wrapper">
+                        <input type="text" id="password">
+                    </div>
+                    <div class="error" id="password-error"></div>
+                </div>
+                <div class="field-wrapper">
+                    <p class="label">FULL NAME:</p>
+                    <div class="input-wrapper">
+                        <input type="text" id="fullname">
+                    </div>
+                    <div class="error" id="fullname-error"></div>
+                </div>
+                <div class="field-wrapper">
+                    <p class="label">COUNTRY:</p>
+                    <div class="input-wrapper">
+                        <select id="country">
+                            <option></option>
+                            <option>Kazakhstan</option>
+                            <option>Usa</option>
+                            <option>Canada</option>
+                        </select>
+                    </div>
+                    <div class="error" id="country-error"></div>
+                </div>
+                <div class="field-wrapper">
+                    <p class="label">BIRTHDAY:</p>
+                    <div class="input-wrapper">
+                        <input type="date" id="birthday">
+                    </div>
+                    <div class="error" id="birthday-error"></div>
+                </div>
+                <div class="field-wrapper">
+                    <button class="blue-button" onclick="return doRegister()">REGISTER</button>
+                </div>
+            </form>
+        </div>
+   </div>
+
+   <script src="register.js"></script>
+</body>
+</html>
